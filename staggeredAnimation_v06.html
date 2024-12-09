@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Cards</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: red;
+            height: 100vh;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100%;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 1009px;
+            padding-top: 200px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            overflow: hidden;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            box-sizing: border-box; /* Include padding/border in dimensions */
+        }
+
+        .card {
+            width: calc(33.33% - 20px); /* Responsive width */
+            max-width: 175px;
+            height: 200px;
+            background-color: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px); /* Adjust to 2 cards per row */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                width: calc(100% - 20px); /* Full-width cards on small screens */
+            }
+        }
+
+        /* Fade in and up delays for animations on each card */
+        #card1 {
+            animation-delay: 0ms;
+        }
+        #card2 {
+            animation-delay: 250ms;
+        }
+        #card3 {
+            animation-delay: 500ms;
+        }
+        #card4 {
+            animation-delay: 750ms;
+        }
+        #card5 {
+            animation-delay: 1000ms;
+        }
+        #card6 {
+            animation-delay: 1250ms;
+        }
+        #card7 {
+            animation-delay: 1500ms;
+        }
+        #card8 {
+            animation-delay: 1750ms;
+        }
+        #card9 {
+            animation-delay: 2000ms;
+        }
+        #card10 {
+            animation-delay: 2250ms;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="card-container">
+            <div id="card1" class="card">Card 1</div>
+            <div id="card2" class="card">Card 2</div>
+            <div id="card3" class="card">Card 3</div>
+            <div id="card4" class="card">Card 4</div>
+            <div id="card5" class="card">Card 5</div>
+            <div id="card6" class="card">Card 6</div>
+            <div id="card7" class="card">Card 7</div>
+            <div id="card8" class="card">Card 8</div>
+            <div id="card9" class="card">Card 9</div>
+            <div id="card10" class="card">Card 10</div>
+        </div>
+    </div>
+</body>
+
+</html>
